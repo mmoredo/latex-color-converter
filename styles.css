@@ -130,5 +130,5 @@ h3 {
   margin-top: 30px; }
 
 @media only screen and (max-width: 768px) {
-  .right {
+  #right {
     display: none; } }
