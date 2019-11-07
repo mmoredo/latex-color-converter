@@ -20,16 +20,15 @@
 
             <div id="search">
                 <input id="colorInput" type="text" placeholder="Enter a color"><button id="colorConvert"
-                    onclick="getInput()"><i class="fas fa-arrow-right"></i></button>
+                    onclick="getInput()"><i aria-hidden="true" class="fas fa-arrow-right" title="Convert"></i></button>
                 <label>
             </div>
             <div id="output">
                 <div id="result">
                     <h3>{rgb}{<span id="colorOutput"></span>}</h3>
                 </div>
-                <button onclick="copyToClipboard('result')"><i class="far fa-copy"></i> Copy</button>
             </div>
-            <div id="error">Error</div>
+            <div id="error">The string could not be recognized as a color.</div>
         </div>
         <div id="right">
         </div>
