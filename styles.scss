@@ -14,7 +14,6 @@ $c-background-grey: #faf9fe;
   display: -ms-flexbox;
   display: -webkit-flex;
   justify-content: center;
-  align-items: center;
 }
 
 @mixin latex-font {
@@ -80,6 +79,7 @@ body {
     font-size: 1em;
     background-color: $c-musk-green;
     color: white;
+    border: none;
   }
 }
 
@@ -91,10 +91,6 @@ input {
   #colorInput {
     font-size: 17px;
   }
-}
-
-button {
-  border: none;
 }
 
 // Headings
@@ -110,8 +106,9 @@ h1 {
 h2 {
   color: #333;
   margin: 0;
-  font-size: 4em;
+  font-size: 3.5em;
   margin-bottom: 40px;
+  font-weight: bold;
 }
 
 h3 {
@@ -163,21 +160,6 @@ h3 {
   sup {
     text-transform: uppercase;
   }
-}
-
-
-#information {
-  padding: 50px;
-  background-color: $c-background-grey;
-  height: 100%;
-  display: none;
-  .close {
-    display: block;
-  }
-}
-
-#package {
-  margin-top: 30px;
 }
 
 // Media Query

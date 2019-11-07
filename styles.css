@@ -20,7 +20,6 @@ body {
   display: -ms-flexbox;
   display: -webkit-flex;
   justify-content: center;
-  align-items: center;
   overflow: hidden;
   background-color: white;
   padding: 0;
@@ -53,7 +52,8 @@ body {
   #search button {
     font-size: 1em;
     background-color: #045960;
-    color: white; }
+    color: white;
+    border: none; }
 
 input {
   flex: 1;
@@ -62,9 +62,6 @@ input {
   font-size: 18px; }
   input #colorInput {
     font-size: 17px; }
-
-button {
-  border: none; }
 
 h1 {
   font-size: 1.5em;
@@ -76,8 +73,9 @@ h1 {
 h2 {
   color: #333;
   margin: 0;
-  font-size: 4em;
-  margin-bottom: 40px; }
+  font-size: 3.5em;
+  margin-bottom: 40px;
+  font-weight: bold; }
 
 h3 {
   font-size: 2.2em;
@@ -117,17 +115,6 @@ h3 {
 .latex sub,
 .latex sup {
   text-transform: uppercase; }
-
-#information {
-  padding: 50px;
-  background-color: #faf9fe;
-  height: 100%;
-  display: none; }
-  #information .close {
-    display: block; }
-
-#package {
-  margin-top: 30px; }
 
 @media only screen and (max-width: 768px) {
   #right {
