@@ -33,7 +33,7 @@ body {
   font-size: 1em;
   background: white;
   height: 100%;
-  color: #95aebd;
+  color: #597B90;
 }
 
 // Flexbox
@@ -110,24 +110,33 @@ h1 {
 h2 {
   color: #333;
   margin: 0;
-  font-size: 3em;
-  margin-bottom: 20px;
+  font-size: 4em;
+  margin-bottom: 40px;
 }
 
 h3 {
   font-size: 2.2em;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 // Output
 
-#result {
-  @include latex-font;
-  font-weight: normal;
-}
-
 #output, #error {
   display: none;
+  padding-top: 20px;
+  color: $c-musk-green;
+}
+
+#result {
+  font-size: 2.5em;
+}
+
+#error {
+  font-size: 1.2em; 
+}
+
+#colorOutput {
+  font-weight: bold;
 }
 
 // LaTeX Logo
@@ -168,7 +177,7 @@ h3 {
 }
 
 #package {
-  margin-top:30px;
+  margin-top: 30px;
 }
 
 // Media Query

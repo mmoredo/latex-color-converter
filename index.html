@@ -19,15 +19,16 @@
             <h2>Convert HEX and RGB color codes to LaTeX</h2>
 
             <div id="search">
-                <input id="colorInput" type="text" placeholder="Enter a color"><button id="colorConvert"
-                    onclick="getInput()"><i aria-hidden="true" class="fas fa-arrow-right" title="Convert"></i></button>
-                <label>
+                <input id="colorInput" type="text" placeholder="Enter a color">
+                <button id="colorConvert" onclick="getInput()"><i aria-hidden="true" class="fas fa-arrow-right" title="Convert"></i></button>
             </div>
+
             <div id="output">
                 <div id="result">
                     <h3>{rgb}{<span id="colorOutput"></span>}</h3>
                 </div>
             </div>
+            
             <div id="error">The string could not be recognized as a color.</div>
         </div>
         <div id="right">
