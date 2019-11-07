@@ -1,20 +1,37 @@
-<div id="container">
-    <div id="left">
-        <h2><span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> Color Converter</h2>
-        <h1>Convert HEX and RGB color codes to LaTeX</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-        <div id="search">
-            <input id="colorInput" type="text" placeholder="Enter a color"><button id="colorConvert"
-                onclick="getInput()"><i class="fas fa-arrow-right"></i></button>
-        </div>
-        <div id="output">
-            <div id="result">
-                <h3>{rgb}{<span id="colorOutput"></span>}</h3>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+    <title>Convert HEX and RGB color codes to LaTeX</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="left">
+            <h2><span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> Color Converter</h2>
+            <h1>Convert HEX and RGB color codes to LaTeX</h1>
+
+            <div id="search">
+                <input id="colorInput" type="text" placeholder="Enter a color"><button id="colorConvert"
+                    onclick="getInput()"><i class="fas fa-arrow-right"></i></button>
             </div>
-            <button onclick="copyToClipboard('result')"><i class="far fa-copy"></i> Copy</button>
+            <div id="output">
+                <div id="result">
+                    <h3>{rgb}{<span id="colorOutput"></span>}</h3>
+                </div>
+                <button onclick="copyToClipboard('result')"><i class="far fa-copy"></i> Copy</button>
+            </div>
+            <div id="error">Error</div>
         </div>
-        <div id="error">Error</div>
+        <div id="right">
+        </div>
     </div>
-    <div id="right">
-    </div>
-</div>
+</body>
+
+</html>
