@@ -1,10 +1,11 @@
 // Colors
 
 $c-musk-green: #045960;
-$c-dark-grey: #696969; // revisar uso
+$c-dark-grey: #696969;
 $c-background-grey: #faf9fe;
 
-// Flex center
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
+@import url('https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css');
 
 @mixin flex-center {
   display: flex;
@@ -99,18 +100,18 @@ button {
 // Headings
 
 h1 {
-  color: #333;
-  margin: 0;
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-
-h2 {
   font-size: 1.5em;
   color: #696969;
   font-weight: normal;
   margin: 0;
   margin-bottom: 10px;
+}
+
+h2 {
+  color: #333;
+  margin: 0;
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 
 h3 {

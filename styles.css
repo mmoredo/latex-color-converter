@@ -65,17 +65,17 @@ button {
   border: none; }
 
 h1 {
-  color: #333;
-  margin: 0;
-  font-size: 3em;
-  margin-bottom: 20px; }
-
-h2 {
   font-size: 1.5em;
   color: #696969;
   font-weight: normal;
   margin: 0;
   margin-bottom: 10px; }
+
+h2 {
+  color: #333;
+  margin: 0;
+  font-size: 3em;
+  margin-bottom: 20px; }
 
 h3 {
   font-size: 2.2em;
