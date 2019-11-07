@@ -19,8 +19,9 @@
             <h2>Convert HEX and RGB color codes to LaTeX</h2>
 
             <div id="search">
-                <input id="colorInput" type="text" placeholder="Enter a color">
-                <button id="colorConvert" onclick="getInput()"><i aria-hidden="true" class="fas fa-arrow-right" title="Convert"></i></button>
+                <label for="colorInput" style="display:none"></label>
+                <input id="colorInput" name="Convert" type="text" placeholder="Enter a color">
+                <button id="colorConvert" type="submit" onclick="getInput()"><i aria-hidden="true" class="fas fa-arrow-right" title="Convert"></i></button>
             </div>
 
             <div id="output">
