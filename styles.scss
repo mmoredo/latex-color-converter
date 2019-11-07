@@ -1,0 +1,179 @@
+// Colors
+
+$c-musk-green: #045960;
+$c-dark-grey: #696969; // revisar uso
+$c-background-grey: #faf9fe;
+
+// Flex center
+
+@mixin flex-center {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin latex-font {
+  font-family: "Computer Modern Serif", serif;
+}
+
+*  {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Work Sans", serif;
+  font-size: 1em;
+  background: white;
+  height: 100%;
+  color: #95aebd;
+}
+
+// Flexbox
+
+#container {
+  @include flex-center;
+  overflow: hidden;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  & > * {
+    flex-basis: 100%;
+  }
+}
+
+#left {
+  background-color: white;
+  padding: 3em;
+}
+
+#right {
+  background: $c-background-grey url(illustration.jpg) no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+// Input
+
+#search {
+  width: 300px;
+  display: flex;
+  color: #1e2530;
+  border: 1px solid $c-musk-green;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 45px;
+  input,
+  button {
+    padding: 10px 15px;
+  }
+  button {
+    font-size: 1em;
+    background-color: $c-musk-green;
+    color: white;
+  }
+}
+
+input {
+  flex: 1;
+  border: none;
+  min-width: 0;
+  font-size: 18px;
+  #colorInput {
+    font-size: 17px;
+  }
+}
+
+button {
+  border: none;
+}
+
+// Headings
+
+h1 {
+  color: #333;
+  margin: 0;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #696969;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+// Output
+
+#result {
+  @include latex-font;
+  font-weight: normal;
+}
+
+#output, #error {
+  display: none;
+}
+
+// LaTeX Logo
+
+.latex {
+  &,
+  sub {
+    font-size: 1.1em;
+    @include latex-font;
+    font-weight: bold;
+  }
+  sub {
+    vertical-align: -0.5ex;
+    margin-left: -0.1667em;
+    margin-right: -0.125em;
+  }
+  sup {
+    font-size: 0.85em;
+    vertical-align: 0.15em;
+    margin-left: -0.36em;
+    margin-right: -0.15em;
+  }
+  sub,
+  sup {
+    text-transform: uppercase;
+  }
+}
+
+
+#information {
+  padding: 50px;
+  background-color: $c-background-grey;
+  height: 100%;
+  display: none;
+  .close {
+    display: block;
+  }
+}
+
+#package {
+  margin-top:30px;
+}
+
+// Media Query
+
+@media only screen and (max-width: 768px) {
+  .right {
+    display: none;
+  }
+}
