@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Work+Sans&display=swap");
-@import url("https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css");
 * {
   padding: 0;
   margin: 0;
@@ -8,10 +7,9 @@
 html,
 body {
   font-family: "Work Sans", serif;
-  font-size: 1em;
-  background: white;
+  background: #f2f2f2;
   height: 100%;
-  color: #597B90; }
+  color: #8b8b8b; }
 
 #container {
   display: flex;
@@ -30,30 +28,38 @@ body {
     flex-basis: 100%; }
 
 #left {
-  background-color: white;
-  padding: 3em; }
+  background: #6a7086 url(illustration.png) no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding: 5em; }
+  #left p {
+    color: #f9f9fc; }
 
 #right {
-  background: #faf9fe url(illustration.jpg) no-repeat;
-  background-size: cover;
-  height: 100%; }
+  padding: 5em; }
 
 #search {
   width: 300px;
   display: flex;
   color: #1e2530;
-  border: 1px solid #045960;
-  border-radius: 15px;
+  border: 2px solid #b2b2b2;
+  border-radius: 10px;
   overflow: hidden;
   height: 45px; }
-  #search input,
-  #search button {
-    padding: 10px 15px; }
-  #search button {
-    font-size: 1em;
-    background-color: #045960;
-    color: white;
-    border: none; }
+
+button {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #6a7086;
+  background-color: #f6d55c;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 50px; }
+
+input,
+button {
+  padding: 15px 20px; }
 
 input {
   flex: 1;
@@ -64,27 +70,30 @@ input {
     font-size: 17px; }
 
 h1 {
-  font-size: 1.5em;
-  color: #696969;
-  font-weight: normal;
+  color: #f2f2f2;
   margin: 0;
-  margin-bottom: 10px; }
+  font-size: calc(2em + 4vmin);
+  margin-bottom: 40px;
+  font-weight: normal;
+  line-height: 1.2; }
 
 h2 {
-  color: #333;
-  margin: 0;
-  font-size: 3.5em;
-  margin-bottom: 40px;
-  font-weight: bold; }
+  font-size: calc(2em + 3vmin);
+  font-weight: 500;
+  color: #535970; }
 
 h3 {
-  font-size: 2.2em;
-  font-weight: normal; }
+  font-size: calc(1em + 1.5vmin);
+  font-weight: normal;
+  color: #D5D5D5; }
+
+p {
+  font-size: 1.3em; }
 
 #output, #error {
   display: none;
   padding-top: 20px;
-  color: #045960; }
+  color: #f65c72; }
 
 #result {
   font-size: 2.5em; }
@@ -92,30 +101,6 @@ h3 {
 #error {
   font-size: 1.2em; }
 
-#colorOutput {
-  font-weight: bold; }
-
-.latex,
-.latex sub {
-  font-size: 1.1em;
-  font-family: "Computer Modern Serif", serif;
-  font-weight: bold; }
-
-.latex sub {
-  vertical-align: -0.5ex;
-  margin-left: -0.1667em;
-  margin-right: -0.125em; }
-
-.latex sup {
-  font-size: 0.85em;
-  vertical-align: 0.15em;
-  margin-left: -0.36em;
-  margin-right: -0.15em; }
-
-.latex sub,
-.latex sup {
-  text-transform: uppercase; }
-
 @media only screen and (max-width: 768px) {
-  #right {
-    display: none; } }
+  #container {
+    flex-direction: column; } }

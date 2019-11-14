@@ -1,11 +1,14 @@
 // Colors
 
-$c-musk-green: #045960;
-$c-dark-grey: #696969;
-$c-background-grey: #faf9fe;
+$c-white-grey: #f2f2f2;
+$c-lavender-blue: #6a7086;
+$c-dark-grey: #8b8b8b;
+$c-light-grey: #D5D5D5;
+$c-mustard-yellow: #f6d55c;
+$c-border: #b2b2b2;
+$c-white: #f9f9fc;
 
 @import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
-@import url('https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css');
 
 @mixin flex-center {
   display: flex;
@@ -14,10 +17,6 @@ $c-background-grey: #faf9fe;
   display: -ms-flexbox;
   display: -webkit-flex;
   justify-content: center;
-}
-
-@mixin latex-font {
-  font-family: "Computer Modern Serif", serif;
 }
 
 *  {
@@ -29,10 +28,9 @@ $c-background-grey: #faf9fe;
 html,
 body {
   font-family: "Work Sans", serif;
-  font-size: 1em;
-  background: white;
+  background: $c-white-grey;
   height: 100%;
-  color: #597B90;
+  color: $c-dark-grey;
 }
 
 // Flexbox
@@ -51,14 +49,17 @@ body {
 }
 
 #left {
-  background-color: white;
-  padding: 3em;
+  background: $c-lavender-blue url(illustration.png) no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding: 5em;
+  p {
+    color: $c-white;
+  }
 }
 
 #right {
-  background: $c-background-grey url(illustration.jpg) no-repeat;
-  background-size: cover;
-  height: 100%;
+  padding: 5em;
 }
 
 // Input
@@ -67,20 +68,26 @@ body {
   width: 300px;
   display: flex;
   color: #1e2530;
-  border: 1px solid $c-musk-green;
-  border-radius: 15px;
+  border: 2px solid $c-border;
+  border-radius: 10px;
   overflow: hidden;
   height: 45px;
-  input,
-  button {
-    padding: 10px 15px;
-  }
-  button {
-    font-size: 1em;
-    background-color: $c-musk-green;
-    color: white;
-    border: none;
-  }
+}
+
+button {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: $c-lavender-blue;
+  background-color: $c-mustard-yellow;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 50px;
+}
+
+input,
+button {
+  padding: 15px 20px;
 }
 
 input {
@@ -96,24 +103,28 @@ input {
 // Headings
 
 h1 {
-  font-size: 1.5em;
-  color: #696969;
-  font-weight: normal;
+  color: $c-white-grey;
   margin: 0;
-  margin-bottom: 10px;
+  font-size: calc(2em + 4vmin);
+  margin-bottom: 40px;
+  font-weight: normal;
+  line-height: 1.2;
 }
 
 h2 {
-  color: #333;
-  margin: 0;
-  font-size: 3.5em;
-  margin-bottom: 40px;
-  font-weight: bold;
+  font-size: calc(2em + 3vmin);
+  font-weight: 500;
+  color: #535970;
 }
 
 h3 {
-  font-size: 2.2em;
+  font-size: calc(1em + 1.5vmin);
   font-weight: normal;
+  color: $c-light-grey;
+}
+
+p {
+  font-size: 1.3em;
 }
 
 // Output
@@ -121,7 +132,7 @@ h3 {
 #output, #error {
   display: none;
   padding-top: 20px;
-  color: $c-musk-green;
+  color: #f65c72
 }
 
 #result {
@@ -132,40 +143,8 @@ h3 {
   font-size: 1.2em; 
 }
 
-#colorOutput {
-  font-weight: bold;
-}
-
-// LaTeX Logo
-
-.latex {
-  &,
-  sub {
-    font-size: 1.1em;
-    @include latex-font;
-    font-weight: bold;
-  }
-  sub {
-    vertical-align: -0.5ex;
-    margin-left: -0.1667em;
-    margin-right: -0.125em;
-  }
-  sup {
-    font-size: 0.85em;
-    vertical-align: 0.15em;
-    margin-left: -0.36em;
-    margin-right: -0.15em;
-  }
-  sub,
-  sup {
-    text-transform: uppercase;
-  }
-}
-
-// Media Query
-
 @media only screen and (max-width: 768px) {
-  #right {
-    display: none;
+  #container {
+    flex-direction: column;
   }
 }
