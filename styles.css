@@ -33,10 +33,15 @@ body {
   height: 100%;
   padding: 5em; }
   #left p {
-    color: #f9f9fc; }
+    color: #f9f9fc;
+    font-size: calc(0.8em + 0.8vmin); }
 
 #right {
-  padding: 5em; }
+  padding: 5em;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 #search {
   width: 300px;
@@ -54,7 +59,7 @@ button {
   background-color: #f6d55c;
   border: none;
   padding: 10px 20px;
-  font-size: 1em;
+  font-size: 1.2em calc(1em + 1vmin);
   border-radius: 50px; }
 
 input,
@@ -71,9 +76,7 @@ input {
 
 h1 {
   color: #f2f2f2;
-  margin: 0;
   font-size: calc(2em + 4vmin);
-  margin-bottom: 40px;
   font-weight: normal;
   line-height: 1.2; }
 
@@ -90,9 +93,9 @@ h3 {
 p {
   font-size: 1.3em; }
 
-#output, #error {
+#error {
   display: none;
-  padding-top: 20px;
+  padding: 20px 0 20px 0;
   color: #f65c72; }
 
 #result {
@@ -101,6 +104,9 @@ p {
 #error {
   font-size: 1.2em; }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 760px) {
   #container {
-    flex-direction: column; } }
+    flex-direction: column;
+    height: auto; }
+  #left #panel, #left button {
+    display: none; } }

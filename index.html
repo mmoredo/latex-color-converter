@@ -18,11 +18,17 @@
             <header>
                 <h1><span>Convert HEX and RGB</span> color codes to LaTeX</h1>
                 <h3>Easily convert your hex or rgb color to <span>LaTeX's xcolor</span> format.</h3>
-                <h4>How it works</h4>
-                <p>The simplest manner to use colours in your document is by importing the package color or xcolor. 
-                    \usepackage{xcolor}
-                    This is the simplest way to type colored text. Where declared-color is a color that was defined before by \definecolor. \definecolor{colorname}{rgb}{red, green, blue}</p>
-            </header>
+               
+               
+                <button>How it works</button>
+                <div id="panel">
+                <p>The xcolor latex package takes rgb colors as parameters following this template:
+
+                        \definecolor{colorname}{rgb}{red, green, blue}
+                        
+                        where red, green and blue are floating point numbers from 0 to 1. This app lets you convert from this template to standard rgb or hex codes and viceversa.</p>
+                    </div>
+                    </header>
         </div>
 
         <div id="right">
@@ -38,8 +44,9 @@
                 <input id="" name="" type="text" placeholder="LaTeX">
                 <span id="colorOutput"></span>
             </div>
-            <button id="colorConvert" type="submit" onclick="getInput()">CONVERT</button>
             <div id="error"><b>Error!</b> Please enter a valid format.</div>
+            <button id="colorConvert" type="submit" onclick="getInput()">CONVERT</button>
+            
         </div>
     </div>
 </body>

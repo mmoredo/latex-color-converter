@@ -55,11 +55,16 @@ body {
   padding: 5em;
   p {
     color: $c-white;
+    font-size: calc(0.8em + 0.8vmin);
   }
 }
 
 #right {
   padding: 5em;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // Input
@@ -81,7 +86,7 @@ button {
   background-color: $c-mustard-yellow;
   border: none;
   padding: 10px 20px;
-  font-size: 1em;
+  font-size: 1.2em calc(1em + 1vmin);
   border-radius: 50px;
 }
 
@@ -104,9 +109,7 @@ input {
 
 h1 {
   color: $c-white-grey;
-  margin: 0;
   font-size: calc(2em + 4vmin);
-  margin-bottom: 40px;
   font-weight: normal;
   line-height: 1.2;
 }
@@ -129,10 +132,13 @@ p {
 
 // Output
 
-#output, #error {
+// #output
+
+#error {
   display: none;
-  padding-top: 20px;
-  color: #f65c72
+  padding: 20px 0 20px 0;
+  color: #f65c72;
+  // transition: ease 0.5s;
 }
 
 #result {
@@ -143,8 +149,16 @@ p {
   font-size: 1.2em; 
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width:760px) {
   #container {
     flex-direction: column;
+    height: auto;
+  }
+  #left {
+    #panel, button {
+      display: none;
+    }
   }
 }
+
+// 
