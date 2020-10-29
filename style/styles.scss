@@ -1,0 +1,277 @@
+// Colors
+
+$white-blue: #e8f0fe;
+$grey: #8b8b8b;
+$lightgrey-text: #ababab;
+$darkblue-background: #241d33;
+$blue-background: #302244;
+$yellow-button: #f6d55c;
+$dark-text: #212121;
+$white: white;
+
+// Mixin
+
+@mixin flex {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+// Main document
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Red Hat Display", sans-serif;
+  height: 100%;
+  color: $lightgrey-text;
+}
+
+#container {
+  @include flex;
+  flex-direction: row;
+  overflow: hidden;
+  border: 10px solid transparent;
+  border-image: linear-gradient(
+    to bottom right,
+    #b827fc 0%,
+    #2c90fc 25%,
+    #b8fd33 50%,
+    #fec837 75%,
+    #fd1892 100%
+  );
+  border-image-slice: 1;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  @include flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1em;
+  button {
+    color: $white-blue;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+}
+
+main {
+  width: 85%;
+  padding: 2em 0;
+  button {
+    margin: 10px 0;
+    font-weight: 700;
+    color: $dark-text;
+    background-color: $yellow-button;
+    padding: 15px 40px;
+    border-radius: 50px;
+  }
+}
+
+#content {
+  height: 100%;
+  padding: 3em;
+  flex: 3;
+  background: $darkblue-background;
+  p {
+    color: $white-blue;
+  }
+}
+
+aside {
+  flex: 2;
+  border-image: linear-gradient(
+    to bottom right,
+    #b827fc 0%,
+    #2c90fc 25%,
+    #b8fd33 50%,
+    #fec837 75%,
+    #fd1892 100%
+  );
+  border-image-slice: 1;
+  background-image: url(../img/illustration.png);
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #302244;
+}
+
+.col {
+  @include flex;
+  height: 60px;
+  width: 300px;
+  overflow: hidden;
+  margin: 10px 0;
+  background-color: $white-blue;
+}
+
+#row {
+  @include flex;
+  div:first-child > div {
+    margin-right: 1em;
+    display: block;
+  }
+}
+
+// Headings
+
+h1 {
+  color: $white;
+  font-size: 4.5vw;
+  font-weight: 400;
+  line-height: 1.2;
+  padding-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 2.5vw;
+  font-weight: 400;
+  color: $white;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: calc(0.8em + 0.8vmin);
+}
+
+button {
+  font-size: 1em;
+  border: none;
+  outline: none;
+  font-family: "Red Hat Display", sans-serif;
+  cursor: pointer;
+  &:active {
+    border: none;
+  }
+}
+
+// Output
+p#error {
+  display: none;
+  padding: 20px 0;
+  color: #f65c72;
+  span {
+    font-weight: 700;
+  }
+}
+
+.color-output {
+  color: $dark-text;
+}
+
+#textarea,
+input {
+  padding: 15px 20px;
+  font-size: 1.6em;
+  border: none;
+  min-width: 0;
+  background-color: $white-blue;
+  height: 60px;
+  font-family: monospace;
+  width: 300px;
+  border-bottom: 2px solid $grey;
+}
+
+#color-sample {
+  width: 30px;
+  display: none;
+}
+
+// Panel
+
+#panel {
+  display: none;
+  padding: 3em 2em;
+  width: 100%;
+  height: 100%;
+  p {
+    color: $lightgrey-text;
+    line-height: 24px;
+    margin: 10px 0;
+  }
+  code {
+    display: block;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: $darkblue-background;
+  }
+  a {
+    color: $lightgrey-text;
+  }
+}
+
+// Media Queries
+
+@media (max-width: 768px) {
+  #container {
+    flex-direction: column;
+  }
+  main {
+    padding-bottom: 0;
+    width: 100%;
+  }
+  aside {
+    background-image: none;
+  }
+  header button {
+    display: none;
+  }
+  #panel {
+    display: block;
+  }
+}
+
+@media (max-width: 425px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  body {
+    height: auto;
+  }
+  #container {
+    height: 100vh;
+  }
+  #container,
+  #row {
+    flex-direction: column;
+  }
+  main {
+    padding: 0;
+    width: 100%;
+  }
+  header button,
+  aside {
+    display: none;
+  }
+  #content {
+    padding: 2em;
+  }
+  aside {
+    background-image: none;
+  }
+  .col {
+    width: auto;
+  }
+  #row div:first-child > div {
+    margin-right: 0;
+  }
+
+  p#error {
+    padding: 0;
+    margin-top: 20px;
+  }
+  main button {
+    margin-top: 20px;
+  }
+}

@@ -2,53 +2,77 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/ed146a17b7.js" crossorigin="anonymous"></script>
-    <title>Convert HEX and RGB color codes to LaTeX</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="Description" content="Easily convert your hex or rgb color to LaTeX's xcolor format.">
+  <link rel="stylesheet" type="text/css" href="style/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap" rel="stylesheet">
+  <script src="script.js"></script>
+  <title>Convert HEX and RGB color codes to LaTeX</title>
 </head>
 
-<body>
-
-    <div id="container" role="main">
-        <div id="left">
-            <header>
-                <h1><span>Convert HEX and RGB</span> color codes to LaTeX</h1>
-                <h3>Easily convert your hex or rgb color to <span>LaTeX's xcolor</span> format.</h3>
-               
-               
-                <button>How it works</button>
-                <div id="panel">
-                <p>The xcolor latex package takes rgb colors as parameters following this template:
-
-                        \definecolor{colorname}{rgb}{red, green, blue}
-                        
-                        where red, green and blue are floating point numbers from 0 to 1. This app lets you convert from this template to standard rgb or hex codes and viceversa.</p>
-                    </div>
-                    </header>
+<div id="container">
+  <div id="content">
+    <header>
+      <div>LaTeX Color Converter</div>
+      <button onclick="openPanel()">How it works →</button>
+    </header>
+    <main>
+      <h1>Convert HEX and RGB to LaTeX's xcolor</h1>
+      
+      <div id="row">
+        <div>
+          <p>From Hex or RGB</p>
+          <div class="col">
+            <input id="input" type="text" name="Convert" maxlength="13" placeholder="(255,255,255)" />
+            <label for="input" style="visibility:hidden">Enter a color code</label>
+          </div>
         </div>
-
-        <div id="right">
-            <h2>Get started</h2>
-            <p>Hex must be be <b>six digits between 0 and F</b> and RGB between <b>0 and 250</b> separated
-                by a comma.</p>
-            <div id="search">
-                <label for="colorInput" style="display:none"></label>
-                <input id="colorInput" name="Convert" type="text" placeholder="Hex or RGB">
+        <div>
+          <p>To LaTeX's xcolor</p>
+          <div class="col">
+            <div id="color-sample"></div>
+            <div id="textarea">
+              <div class="color-output"></div>
             </div>
-            <div id="search">
-                <label for="" style="display:none"></label>
-                <input id="" name="" type="text" placeholder="LaTeX">
-                <span id="colorOutput"></span>
-            </div>
-            <div id="error"><b>Error!</b> Please enter a valid format.</div>
-            <button id="colorConvert" type="submit" onclick="getInput()">CONVERT</button>
-            
+          </div>
+          <code>\definecolor{name}{rgb}<span class="color-output">{r,g,b}</span></code>
         </div>
+      </div>
+      <p id="error">Please enter a valid format.
+        Hex must be <span>six digits between 0 and F.</span>
+        and RGB between <span>0 and 250</span> separated by a comma.
+      </p>
+      <button id="convert" type="submit" onclick="getInput()">Convert →</button>
+    </main>
+  </div>
+
+  <aside>
+    <div id="panel">
+      <h2>How it works</h2>
+      <p>
+        The xcolor latex package takes RGB colors as parameters following
+        this template:</p>
+
+      <code>\definecolor{colorname}{rgb}{red, green, blue}</code>
+
+      <p>Red, green and blue are floating point numbers from 0 to 1.
+        This app lets you convert from this template to standard RGB or
+        HEX codes.
+      </p>
+
+      <p>Don't forget to give your color a unique and identifiable name!</p>
+
+      <code>\definecolor{bluish}</code>
+
+      <p>More information:</p>
+
+      <a href="https://en.wikibooks.org/wiki/LaTeX/Colors" rel="noopener" target="_blank">Wiki LaTeX Colors</a>
     </div>
+  </aside>
+</div>
+
 </body>
 
 </html>

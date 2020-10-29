@@ -1,7 +1,6 @@
 **WORK IN PROGRESS**
 
-[mmoredo.github.io/latex-color-converter](http://mmoredo.github.io/latex-color-converter)
-
+moredo.github.io/latex-color-converter
 
 Convert your HEX or RGB colors to LaTeX's xcolor format.
 
